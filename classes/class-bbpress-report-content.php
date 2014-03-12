@@ -412,6 +412,8 @@ class bbp_ReportContent {
 
 		// Execute post report code
 		do_action( 'bbp_rc_reported_topic', $topic_id );
+		
+		matt_send_email();
 
 		// Return topic_id
 		return $topic_id;
@@ -715,6 +717,8 @@ class bbp_ReportContent {
 
 		// Execute post report code
 		do_action( 'bbp_rc_reported_reply', $reply_id );
+		
+		matt_send_email();
 
 		// Return reply_id
 		return $reply_id;
@@ -1172,6 +1176,10 @@ class bbp_ReportContent {
 		}
 
 		return $username;
+	}
+	
+	function matt_send_email() {
+		wp_mail( 'mtedwards.8fbs9@sync.omnigroup.com', 'New Reported Post', 'Check it' );
 	}
 
 } // end class bbp_ReportContent

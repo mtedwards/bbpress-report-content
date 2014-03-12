@@ -1182,9 +1182,9 @@ class bbp_ReportContent {
 } // end class bbp_ReportContent
 
 	function matt_send_email_reply($reply_id) {
-		wp_mail( 'mtedwards.8fbs9@sync.omnigroup.com', 'New Reported Reply', 'Check it >'. $reply_id );
+		wp_mail( 'xxxxx', 'New Reported Reply', 'Check it >'. $reply_id );
 	}
 	
 	function matt_send_email_topic($topic_id) {
-		wp_mail( 'mtedwards.8fbs9@sync.omnigroup.com', 'New Reported Topic', 'Check it >'. $topic_id );
+		wp_mail( 'xxxxx', 'New Reported Topic', 'Check it >'. $topic_id );
 	}

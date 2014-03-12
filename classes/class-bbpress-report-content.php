@@ -413,7 +413,7 @@ class bbp_ReportContent {
 		// Execute post report code
 		do_action( 'bbp_rc_reported_topic', $topic_id );
 		
-		matt_send_email();
+		matt_send_email_topic($topic_id);
 
 		// Return topic_id
 		return $topic_id;
@@ -718,7 +718,7 @@ class bbp_ReportContent {
 		// Execute post report code
 		do_action( 'bbp_rc_reported_reply', $reply_id );
 		
-		matt_send_email();
+		matt_send_email_reply($reply_id);
 
 		// Return reply_id
 		return $reply_id;
@@ -1178,8 +1178,13 @@ class bbp_ReportContent {
 		return $username;
 	}
 	
-	function matt_send_email() {
-		wp_mail( 'mtedwards.8fbs9@sync.omnigroup.com', 'New Reported Post', 'Check it' );
-	}
 
 } // end class bbp_ReportContent
+
+	function matt_send_email_reply($reply_id) {
+		wp_mail( 'mtedwards.8fbs9@sync.omnigroup.com', 'New Reported Reply', 'Check it >'. $reply_id );
+	}
+	
+	function matt_send_email_topic($topic_id) {
+		wp_mail( 'mtedwards.8fbs9@sync.omnigroup.com', 'New Reported Topic', 'Check it >'. $topic_id );
+	}
